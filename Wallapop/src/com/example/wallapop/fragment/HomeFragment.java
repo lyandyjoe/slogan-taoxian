@@ -28,6 +28,7 @@ public class HomeFragment extends Fragment implements OnScrollListener, OnItemCl
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -40,28 +41,30 @@ public class HomeFragment extends Fragment implements OnScrollListener, OnItemCl
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         generateData();
-        View view = View.inflate(getActivity(), R.layout.fragment_home, null);
-        mProductGridView = (StaggeredGridView)view.findViewById(R.id.grid_view);
-        
-        pGridViewAdapter = new ProductsGridViewAdapter(getActivity(),productsList);
-        
+        mProductGridView = (StaggeredGridView)getView().findViewById(R.id.grid_view);
+
+        pGridViewAdapter = new ProductsGridViewAdapter(getActivity(), productsList);
+
         mProductGridView.setAdapter(pGridViewAdapter);
-        
+
         mProductGridView.setOnScrollListener(this);
         mProductGridView.setOnItemClickListener(this);
     }
+    public void onActivityResult(int requestCode, int resultCode, android.content.Intent data) {};
 
     /**
      * 
      */
     List<ProductInfoBean> productsList;
+
     private void generateData() {
         productsList = new ArrayList<ProductInfoBean>();
         for (int i = 0; i < 40; i++) {
             ProductInfoBean productInfo = new ProductInfoBean();
             productInfo.setProductName("product" + i);
             productInfo.setProductPrice(i);
-            productInfo.setProductThumbImage("http://upload-images.jianshu.io/upload_images/70863-c1576d543f30d6b1.png");
+            productInfo
+                    .setProductThumbImage("http://upload-images.jianshu.io/upload_images/70863-c1576d543f30d6b1.png");
             productInfo.setNewProduct(true);
             productInfo.setProductDescription("ProductDescription");
             productsList.add(productInfo);
@@ -70,17 +73,17 @@ public class HomeFragment extends Fragment implements OnScrollListener, OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        
+
     }
 
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
-        
+
     }
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
             int totalItemCount) {
-        
+
     }
 }

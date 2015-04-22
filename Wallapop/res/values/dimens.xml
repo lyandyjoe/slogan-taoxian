@@ -17,4 +17,8 @@
     <dimen name="slide_menu_item_height">60dp</dimen>
     <dimen name="slide_menu_item_margin_space">20dp</dimen>
 
+    <!-- Heander -->
+    <dimen name="header_button_padding_border">8dp</dimen>
+    <dimen name="header_container_height">48dp</dimen>
+
 </resources>

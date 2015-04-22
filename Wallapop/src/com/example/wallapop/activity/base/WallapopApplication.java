@@ -1,11 +1,16 @@
 
 package com.example.wallapop.activity.base;
 
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
 import android.app.Activity;
 import android.app.Application;
+
+import com.example.wallapop.utils.Constants;
+import com.example.wallapop.utils.imageloader.core.ImageLoader;
+import com.example.wallapop.utils.imageloader.core.ImageLoaderConfiguration;
 
 /**
  * Created by york on 15/4/17.
@@ -14,7 +19,7 @@ public class WallapopApplication extends Application {
     /**
      * 活动的activity
      */
-    private List<Activity> mActiveActivity = new LinkedList<Activity>();
+    public List<Activity> mActiveActivity = new LinkedList<Activity>();
 
     private volatile static WallapopApplication instance;
 
@@ -27,6 +32,30 @@ public class WallapopApplication extends Application {
             }
         }
         return instance;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        File cacheDir = new File(Constants.dir_appcache);
+        // ImageLoaderConfiguration config = new
+        // ImageLoaderConfiguration.Builder(
+        // getApplicationContext()).threadPoolSize(THREAD_POOL_MAX)
+        // .threadPriority(Thread.NORM_PRIORITY - 2)
+        // .memoryCache(new UsingFreqLimitedMemoryCache(MEMORY_CACHE_SIZE_MAX))
+        // .memoryCacheExtraOptions(MAX_IMG_W_FOR_MEMORY_CACHE,
+        // MAX_IMG_H_FOR_MEMORY_CACHE)
+        // .denyCacheImageMultipleSizesInMemory().diskCache(new
+        // UnlimitedDiskCache(cacheDir))
+        // // .diskCacheFileNameGenerator(new Md5FileNameGenerator())
+        // // .enableLogging() // Not necessary in common
+        // // .offOutOfMemoryHandling()
+        // // .memoryCache(new WeakMemoryCache())
+        // .build();
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(this));
+        // ImageLoader.getInstance().init(config);
     }
 
     // add Activity

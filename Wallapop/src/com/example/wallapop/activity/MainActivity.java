@@ -40,7 +40,7 @@ public class MainActivity extends BaseFragmentActivity implements OnItemClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.base_fragment_activity_layout);
 
         ActionBar ab = getActionBar();
 
