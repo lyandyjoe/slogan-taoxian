@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Wallapop</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+    <string name="rmb">RMB</string>
+
+    <string-array name="slide_item">
+        <item> 聊天</item>
+        <item> 消息</item>
+        <item> 收藏</item>
+        <item> 分类</item>
+        <item> 您的附近</item>
+        <item> 邀请好友</item>
+        <item> 帮助</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 抽屉导航宽 -->
+    <dimen name="navdrawer_width">240dp</dimen>
+    <dimen name="navdrawer_user_info_space">5dp</dimen>
+    <dimen name="ldrawer_drawableSize">50dp</dimen>
+    <!-- 导航左侧图标大小 -->
+    <dimen name="ldrawer_barSize">18dp</dimen>
+    <!-- 导航三角的高度大小 -->
+    <dimen name="ldrawer_topBottomBarArrowSize">11dp</dimen>
+    <!-- 三角的长度大小 -->
+    <dimen name="ldrawer_middleBarArrowSize">16dp</dimen>
+    <!-- 导航更多的厚度 -->
+    <dimen name="ldrawer_thickness">2dp</dimen>
+    <dimen name="ldrawer_gapBetweenBars">3dp</dimen>
+    <dimen name="slide_menu_item_height">60dp</dimen>
+    <dimen name="slide_menu_item_margin_space">20dp</dimen>
+
+</resources>

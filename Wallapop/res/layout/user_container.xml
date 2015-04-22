@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <com.example.wallapop.view.ShapeImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/navdrawer_user_info_space"
+        android:layout_marginLeft="@dimen/navdrawer_user_info_space"
+        android:layout_marginRight="@dimen/navdrawer_user_info_space"
+        android:layout_marginTop="@dimen/navdrawer_user_info_space"
+        android:src="@drawable/placeholder_user_male_medium"
+        app:shape="circle" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="lyandyjoe" />
+
+        <TextView
+            android:id="@+id/user_products"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0 products" />
+    </LinearLayout>
+
+</LinearLayout>

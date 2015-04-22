@@ -1,0 +1,55 @@
+
+package com.example.wallapop.activity.base;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import android.app.Activity;
+import android.app.Application;
+
+/**
+ * Created by york on 15/4/17.
+ */
+public class WallapopApplication extends Application {
+    /**
+     * 活动的activity
+     */
+    private List<Activity> mActiveActivity = new LinkedList<Activity>();
+
+    private volatile static WallapopApplication instance;
+
+    public synchronized static WallapopApplication getInstance() {
+        if (instance == null) {
+            synchronized (WallapopApplication.class) {
+                if (instance == null) {
+                    instance = new WallapopApplication();
+                }
+            }
+        }
+        return instance;
+    }
+
+    // add Activity
+    public void addActivity(Activity activity) {
+        mActiveActivity.add(activity);
+    }
+
+    public void exit() {
+        try {
+            for (Activity activity : mActiveActivity) {
+                if (activity != null)
+                    activity.finish();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            System.exit(0);
+        }
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        System.gc();
+    }
+}
