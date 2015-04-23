@@ -12,14 +12,14 @@ import android.widget.TextView;
 import com.example.wallapop.R;
 import com.example.wallapop.bean.ProductInfoBean;
 import com.example.wallapop.utils.imageloader.core.ImageLoader;
-import com.example.wallapop.view.ShapeImageView;
+import com.example.wallapop.view.SelectableRoundedImageView;
 
 public class ProductsGridViewAdapter extends BaseAdapter {
     List<ProductInfoBean> productsList;
 
     private Context mContext;
 
-    public ProductsGridViewAdapter(Context context,List<ProductInfoBean> productsList) {
+    public ProductsGridViewAdapter(Context context, List<ProductInfoBean> productsList) {
         this.mContext = context;
         this.productsList = productsList;
     }
@@ -45,7 +45,9 @@ public class ProductsGridViewAdapter extends BaseAdapter {
         if (convertView == null) {
             viewHolder = new ViewHolder();
             convertView = View.inflate(mContext, R.layout.product_item_layout, null);
-            viewHolder.product_image = (ShapeImageView)convertView.findViewById(R.id.product_image);
+            viewHolder.product_image = (SelectableRoundedImageView)convertView
+                    .findViewById(R.id.product_image);
+            ((SelectableRoundedImageView)viewHolder.product_image).setCornerRadiiDP(15, 15, 0, 0);
             viewHolder.product_price = (TextView)convertView.findViewById(R.id.product_price);
             viewHolder.product_name = (TextView)convertView.findViewById(R.id.product_name);
             convertView.setTag(viewHolder);
@@ -67,7 +69,7 @@ public class ProductsGridViewAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        ShapeImageView product_image;
+        SelectableRoundedImageView product_image;
 
         TextView product_price;
 

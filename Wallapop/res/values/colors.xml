@@ -4,9 +4,10 @@
     <color name="drawer_bottom_line">#DFDFDF</color>
     <color name="ldrawer_color">#FFFFFF</color>
     <color name="actionbar_color">#019587</color>
+    <color name="slide_color">#505457</color>
     <!-- 白色 -->
     <color name="guide_white">#FFFFFF</color>
     <!-- 分割线 -->
     <color name="guide_divider">#dfe1e0</color>
-
+	
 </resources>

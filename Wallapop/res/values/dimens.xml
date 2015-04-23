@@ -14,7 +14,7 @@
     <!-- 导航更多的厚度 -->
     <dimen name="ldrawer_thickness">2dp</dimen>
     <dimen name="ldrawer_gapBetweenBars">3dp</dimen>
-    <dimen name="slide_menu_item_height">60dp</dimen>
+    <dimen name="slide_menu_item_height">55dp</dimen>
     <dimen name="slide_menu_item_margin_space">20dp</dimen>
 
     <!-- Heander -->

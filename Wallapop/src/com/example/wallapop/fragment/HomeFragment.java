@@ -50,7 +50,9 @@ public class HomeFragment extends Fragment implements OnScrollListener, OnItemCl
         mProductGridView.setOnScrollListener(this);
         mProductGridView.setOnItemClickListener(this);
     }
-    public void onActivityResult(int requestCode, int resultCode, android.content.Intent data) {};
+
+    public void onActivityResult(int requestCode, int resultCode, android.content.Intent data) {
+    };
 
     /**
      * 
@@ -59,12 +61,12 @@ public class HomeFragment extends Fragment implements OnScrollListener, OnItemCl
 
     private void generateData() {
         productsList = new ArrayList<ProductInfoBean>();
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < 12; i++) {
             ProductInfoBean productInfo = new ProductInfoBean();
             productInfo.setProductName("product" + i);
             productInfo.setProductPrice(i);
             productInfo
-                    .setProductThumbImage("http://upload-images.jianshu.io/upload_images/70863-c1576d543f30d6b1.png");
+                    .setProductThumbImage("http://upload-images.jianshu.io/upload_images/70863-60f3e437e600b926.png");
             productInfo.setNewProduct(true);
             productInfo.setProductDescription("ProductDescription");
             productsList.add(productInfo);

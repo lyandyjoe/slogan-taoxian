@@ -4,7 +4,7 @@
     android:layout_width="@dimen/navdrawer_width"
     android:layout_height="match_parent"
     android:layout_gravity="start"
-    android:background="@android:color/white" >
+    android:background="@color/slide_color" >
 
     <include
         android:id="@+id/header_user_info"
@@ -14,19 +14,22 @@
         android:layout_marginTop="@dimen/slide_menu_item_margin_space"
         layout="@layout/user_container" />
 
-    <include layout="@layout/divider" />
+    <include
+        android:id="@+id/divider"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/header_user_info"
+        android:layout_marginTop="@dimen/slide_menu_item_margin_space"
+        layout="@layout/divider" />
 
     <ListView
         android:id="@+id/navdrawer"
         android:layout_width="@dimen/navdrawer_width"
         android:layout_height="match_parent"
-        android:layout_below="@+id/header_user_info"
-        android:layout_marginTop="@dimen/slide_menu_item_margin_space"
-        android:background="@android:color/white"
+        android:layout_below="@+id/divider"
+        android:background="@color/slide_color"
         android:cacheColorHint="#00000000"
         android:choiceMode="singleChoice"
-        android:divider="@color/drawer_bottom_line"
-        android:dividerHeight="0.5dp"
         android:drawSelectorOnTop="false" >
     </ListView>
 
